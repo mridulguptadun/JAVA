@@ -1,0 +1,316 @@
+👉 Mobile Recharge Offer
+    Recharge < 199    → No Offer    
+    Recharge 199 - 499    → 5% Cashback    
+    Recharge 500 - 999    → 10% Cashback    
+    Recharge >= 1000    → 20% Cashback + Free OTT Subscription
+
+👉 Shopping Discount
+    Purchase < ₹1000    → No Discount    
+    ₹1000 - ₹4999    → 10%    
+    ₹5000 - ₹9999    → 20%    
+    ₹10000 or More    → 30%
+
+👉 Bank Fixed Deposit
+    Amount < ₹50,000    →  Interest = 5%    
+    ₹50,000 - ₹2,00,000   →   Interest = 6.5%    
+    ₹2,00,001 - ₹5,00,000  →  Interest = 7.5%    
+    Above ₹5,00,000   →  Interest = 8.5%    
+    Senior Citizen    → Extra 1% Interest    
+    Duration > 5 Years   → Bonus ₹10,000
+
+👉 Shopping Mall Billing
+    Purchase < ₹2000   →  No Discount  
+    ₹2000 - ₹4999      →   10%    
+    ₹5000 - ₹9999      →  20%    
+    ₹10000+    30%
+    Premium Member    → Extra 5% Discount    
+    If Final Bill > ₹15000  → Free Gift Voucher ₹1000
+
+👉 Scholarship System
+
+    Marks >= 95   100% Scholarship    
+    90 - 94   →  75%    
+    80 - 89   → 50%    
+    70 - 79   →  25%    
+    Below 70  No Scholarship    
+    Family Income < ₹3,00,000  → Extra ₹20,000    
+    Sports Certificate  → Extra ₹10,000
+
+👉 Hospital Bill
+
+    General Ward  → ₹1000/day 
+    Semi Private  → ₹2500/day 
+    Private       → ₹5000/day   
+    Medicine Cost   
+    Operation Cost  
+    If Total Bill > ₹50000 → 10% Discount   
+    Senior Citizen → Extra 5% Discount
+
+🔥University Admission System
+
+    PCM Average >= 90, Computer Science  
+    PCM Average 80-89, IT  
+    PCM Average 70-79, Electronics 
+    PCM Average 60-69, Mechanical  
+    Below 60, Not Eligible 
+    JEE Rank < 1000  → Direct Admission 
+    Sports Quota → Add 5 Marks 
+    Income < ₹2,50,000 → Fee Waiver 50%
+    Hostel Required → Add Hostel Fee ₹80,000
+
+-------------------------------------------------------
+
+1) Electricity Bill Calculator
+    0–100 units → ₹5 per unit
+    101–200 units → ₹7 per unit
+    201–300 units → ₹9 per unit
+    Above 300 units → ₹12 per unit
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Units: ");
+        int units = sc.nextInt();
+
+        double bill;
+
+        if (units <= 100) {
+            bill = units * 5;
+        }
+        else if (units <= 200) {
+            bill = units * 7;
+        }
+        else if (units <= 300) {
+            bill = units * 9;
+        }
+        else {
+            bill = units * 12;
+        }
+
+        System.out.println("Total Bill = " + bill);
+    }
+}
+
+2) Income Tax Calculator
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Income: ");
+        double income = sc.nextDouble();
+
+        double tax;
+
+        if (income <= 300000) {
+            tax = 0;
+        }
+        else if (income <= 600000) {
+            tax = income * 0.05;
+        }
+        else if (income <= 900000) {
+            tax = income * 0.10;
+        }
+        else if (income <= 1200000) {
+            tax = income * 0.15;
+        }
+        else {
+            tax = income * 0.20;
+        }
+
+        System.out.println("Tax = " + tax);
+
+    }
+}
+
+3) Login System
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Username: ");
+        String username = sc.nextLine();
+
+        System.out.print("Enter Password: ");
+        String password = sc.nextLine();
+
+        if (username.equals("admin") && password.equals("12345")) {
+            System.out.println("Login Successful");
+        }
+        else if (!username.equals("admin")) {
+            System.out.println("Invalid Username");
+        }
+        else {
+            System.out.println("Wrong Password");
+        }
+
+    }
+}
+
+4) ATM Withdrawal
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int balance = 10000;
+
+        System.out.print("Enter Withdrawal Amount: ");
+        int amount = sc.nextInt();
+
+        if (amount <= 0) {
+            System.out.println("Invalid Amount");
+        }
+        else if (amount > balance) {
+            System.out.println("Insufficient Balance");
+        }
+        else if (amount % 100 != 0) {
+            System.out.println("Amount must be multiple of 100");
+        }
+        else {
+            balance = balance - amount;
+            System.out.println("Withdrawal Successful");
+            System.out.println("Remaining Balance = " + balance);
+        }
+
+    }
+}
+
+5) Student Scholarship System
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Marks: ");
+        int marks = sc.nextInt();
+
+        System.out.print("Enter Family Income: ");
+        int income = sc.nextInt();
+
+        if (marks >= 90 && income < 300000) {
+            System.out.println("100% Scholarship");
+        }
+        else if (marks >= 80 && income < 500000) {
+            System.out.println("50% Scholarship");
+        }
+        else if (marks >= 70) {
+            System.out.println("25% Scholarship");
+        }
+        else {
+            System.out.println("No Scholarship");
+        }
+
+    }
+}
+
+6) Triangle Type Checker
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Side 1: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter Side 2: ");
+        int b = sc.nextInt();
+
+        System.out.print("Enter Side 3: ");
+        int c = sc.nextInt();
+
+        if (a + b <= c || a + c <= b || b + c <= a) {
+            System.out.println("Invalid Triangle");
+        }
+        else if (a == b && b == c) {
+            System.out.println("Equilateral Triangle");
+        }
+        else if (a == b || b == c || a == c) {
+            System.out.println("Isosceles Triangle");
+        }
+        else {
+            System.out.println("Scalene Triangle");
+        }
+
+    }
+}
+
+7) Online Shopping Discount (Tough)
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Purchase Amount: ");
+        double amount = sc.nextDouble();
+
+        System.out.print("Premium Member (true/false): ");
+        boolean premium = sc.nextBoolean();
+
+        double discount;
+
+        if (premium && amount >= 10000) {
+            discount = 0.30;
+        }
+        else if (premium && amount >= 5000) {
+            discount = 0.20;
+        }
+        else if (amount >= 10000) {
+            discount = 0.15;
+        }
+        else if (amount >= 5000) {
+            discount = 0.10;
+        }
+        else {
+            discount = 0;
+        }
+
+        double finalAmount = amount - (amount * discount);
+
+        System.out.println("Discount = " + (discount * 100) + "%");
+        System.out.println("Final Amount = " + finalAmount);
+
+    }
+}
+
+👉 Bank Loan Eligibility Checker
+👉 Employee Salary + Bonus Calculator
+👉 Train Ticket Fare Calculator (Age + Class)
+👉 Hospital Bill Calculator
+👉 Hotel Room Booking Price Calculator
+👉 Mobile Recharge Offer System
+👉 Movie Ticket Booking with Weekend Pricing
+👉 Driving License Eligibility Checker
+👉 BMI (Body Mass Index) Category Checker
+👉 Income Tax Calculator with multiple slabs and surcharge
+
+
