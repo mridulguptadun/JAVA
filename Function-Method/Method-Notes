@@ -305,3 +305,45 @@ public class Main {
 
     }
 }
+
+============================
+| return Statement in Java |
+============================
+👉 The return statement is used to terminate a method and send a value back to the caller.
+   👉 Ends the execution of a method.
+   👉 Returns a value to the caller (if the method is non-void).
+   👉 In a void method, it can be used to exit the method without returning a value.
+  👉  Statements after return are unreachable.
+
+return value; -> Returning a Value
+return a + b; -> Returning an Expression
+int sum = a + b;
+return sum;  -> Returning a Variable
+
+---------------------------------------------------------- // Multiple Return Statements
+public class Main {
+    public static int max(int a, int b) {
+        if (a > b) {
+            return a;
+        }
+        return b;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(max(50, 30));
+    }
+}
+---------------------------------------------------------- // return Inside if-else
+public class Main {
+    public static String check(int age) {
+        if (age >= 18) {
+            return "Adult";
+        } else {
+            return "Minor";
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(check(20));
+    }
+}
