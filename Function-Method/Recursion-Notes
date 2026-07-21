@@ -1,0 +1,68 @@
+=====================
+| Recursion in Java |
+=====================
+👉 Recursion is a process in which a method calls itself repeatedly until a specific condition is met.
+  👉 A recursive method calls itself.
+  👉 Every recursion must have a base case.
+  👉 The base case stops the recursion.
+  👉 Without a base case, infinite recursion occurs.
+  👉 Each recursive call creates a new stack frame.
+
+  returnType methodName(parameters)
+  {
+      if(condition)
+      {
+          return value;   // Base Case
+      }
+      methodName();       // Recursive Call
+  }
+
+👉 Base Case -> A base case is a condition that stops the recursive calls.
+
+  if(n == 0)
+  {
+      return;
+  }
+
+👉 Recursive Case -> A recursive case is the part where the method calls itself.
+
+  function(n-1);
+-------------------------------------------------------  // Simple Recursion Print 1 to N
+  public class Main {                          
+      public static void print(int n) {
+          if(n == 0) {
+              return;
+          }
+          System.out.println(n);
+          print(n-1);
+      }
+  
+      public static void main(String[] args) {
+          print(5);
+      }
+  }
+-------------------------------------------------------- //  Factorial Using Recursion
+  public class Main {
+      public static int factorial(int n) {
+          if(n == 1) {
+              return 1;
+          }
+          return n * factorial(n-1);
+      }
+      public static void main(String[] args) {
+          int result = factorial(5);
+          System.out.println(result);
+      }
+  }
+------------------------------------------------------- // Sum of N Numbers
+  public class Main {
+      public static int sum(int n) {
+          if(n == 1) {
+              return 1;
+          }
+          return n + sum(n-1);
+      }
+      public static void main(String[] args) {
+          System.out.println(sum(5));
+      }
+  }
