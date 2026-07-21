@@ -347,3 +347,178 @@ public class Main {
         System.out.println(check(20));
     }
 }
+
+==============================
+| Method Overloading in Java |
+==============================
+👉 Method Overloading is the process of creating multiple methods with the same name but different parameter lists in the same class.
+   👉 Same method name.
+   👉 Same class.
+   👉 Different parameter list.
+   👉 Parameters can differ by:
+   👉 Number of parameters
+   👉 Type of parameters
+   👉 Order of parameter types
+   👉 Return type alone cannot overload a method.
+   👉 Resolved at compile time.
+
+methodName(type1 parameter1)
+methodName(type1 parameter1, type2 parameter2)
+methodName(type1 parameter1, type2 parameter2, type3 parameter3)
+------------------------------------------------------------------------ // Different Number of Parameters
+public class Main {
+    public static void show() {
+        System.out.println("No Parameter");
+    }
+
+    public static void show(String name) {
+        System.out.println("Name : " + name);
+    }
+
+    public static void show(String name, int age) {
+        System.out.println(name + " " + age);
+    }
+
+    public static void main(String[] args) {
+        show();
+        show("Mridul");
+        show("Rahul", 18);
+    }
+}
+
+👉 Method Signature -> A method signature consists of the method name and its parameter list. It does not include the return type.
+                        add(int,int)
+👉 Compile-Time Polymorphism -> Compile-Time Polymorphism is the ability of Java to decide which overloaded method to call during compilation.
+
+=========================
+| Pass by Value in Java |
+=========================
+👉 Pass by Value means that a copy of the actual value is passed to the method. 
+   Changes made to the copied value do not affect the original variable.
+   👉 Java is always Pass by Value.
+   👉 A copy of the value is passed.
+   👉 Original variable remains unchanged (for primitives).
+   👉 For objects, the reference is copied, not the object itself.
+   👉 Java does not support Pass by Reference.
+
+public class Main {
+    public static void change(int num) {
+        num = 50;
+        System.out.println("Inside Method : " + num);
+    }
+
+    public static void main(String[] args) {
+        int x = 10;
+        change(x);
+        System.out.println("Outside Method : " + x);
+
+    }
+}
+
+O/P : Inside Method : 50
+      Outside Method : 10
+
+==========================
+| Variable Scope in Java |
+==========================
+👉 Variable Scope is the region of a program where a variable is accessible.
+   👉 Scope defines where a variable can be used.
+   👉 Variables are only accessible within their scope.
+   👉 A variable cannot be accessed outside its scope.
+   👉 Java has different types of variable scopes.
+
+👉 Local Variable -> A local variable is declared inside a method, constructor, or block and can only be accessed within that method or block.
+   public class Main {
+       public static void show() {
+           int age = 18;               // Local Variable
+           System.out.println(age);
+       }
+       public static void main(String[] args) {
+           show();
+       }
+   }
+
+   Method Starts
+         │
+         ▼
+   Variable Created
+         │
+         ▼
+   Method Executes
+         │
+         ▼
+   Method Ends
+         │
+         ▼
+   Variable Destroyed
+
+👉 Instance Variable -> An instance variable is declared inside a class but outside all methods, constructors, and blocks. 
+                        Each object has its own copy of instance variables.
+
+   class Student {
+       String name;    // Instance Variable
+   }
+   
+   public class Main {
+       public static void main(String[] args) {
+           Student s1 = new Student();
+           Student s2 = new Student();
+           s1.name = "Mridul";
+           s2.name = "Rahul";
+           System.out.println(s1.name);
+           System.out.println(s2.name);
+       }
+   }
+
+👉 Static Variable -> A static variable belongs to the class rather than to any object. Only one copy of a static variable exists, 
+                      and it is shared by all objects.
+
+   class Student {
+       static String school = "ABC School";  // Static Variable
+   }
+   
+   public class Main {
+       public static void main(String[] args) {
+           Student s1 = new Student();
+           Student s2 = new Student();
+           System.out.println(s1.school);
+           System.out.println(s2.school);
+       }
+   }
+
+👉 Block Scope -> A variable declared inside a block ({}) can only be accessed within that block.
+   
+   public class Main {
+          public static void main(String[] args) {
+              if (true) {
+                  int x = 100;                 // Block Scope
+                  System.out.println(x);
+              }
+          }
+      }
+
+👉 Variable Shadowing -> Variable Shadowing occurs when a local variable has the same name as an instance or class variable, 
+                      hiding the outer variable within its scope.
+
+   class Student {
+       String name = "Mridul";
+       public void show() {
+           String name = "Rahul";
+           System.out.println(name);
+           System.out.println(this.name);
+       }
+   }
+
+-----------------
+| Scope Summary |
+-----------------
+_________________________________________________________________________________________________________
+| Variable Type | Declared Where             | Scope        | Lifetime                                  |
+| ------------- | -------------------------- | ------------ | ----------------------------------------- |
+| Local         | Inside method              | Method only  | Until method ends                         |
+| Instance      | Inside class               | Object       | Until object is destroyed                 |
+| Static        | Inside class with `static` | Entire class | Until program ends (or class is unloaded) |
+| Block         | Inside `{}`                | Block only   | Until block ends                          |
+---------------------------------------------------------------------------------------------------------
+
+
