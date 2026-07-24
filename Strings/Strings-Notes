@@ -1,1 +1,65 @@
+================
+| Java Strings |
+================
+👉 A String is a sequence of characters used to store and manipulate text in Java.
+   String name = "Hello";
+
+👉 Declaring a String
+
+  String name = "Mridul";
+  String     → Data Type
+  name       → Variable Name
+  "Mridul"   → String Literal
+
+  Method 2 (Using new Keyword)
+  
+  String name = new String("Mridul");
+
+👉 Printing String
+
+    String firstName = "Mridul";
+    String lastName = "Gupta";
+    System.out.println(firstName);
+    System.out.println(lastName);
+
+👉 String Concatenation -> Concatenation means joining two or more strings together. (Using '+' Operator)
+
+    public class Main
+    {
+        public static void main(String[] args)
+        {
+            String first = "Hello";
+            String second = "World";
+            String result = first + second;  // HelloWorld
+            String result = first + " " + second;  // // Hello World
+            System.out.println(result);   
+        }
+    }
+
+==> String is an Object <==
+
+👉 String Literal -> A String Literal is a string enclosed within double quotation marks.
+
+👉 Escape Characters
+_________________________
+| Escape | Meaning      |
+| ------ | ------------ |
+| `\"`   | Double Quote |
+| `\'`   | Single Quote |
+| `\\`   | Backslash    |
+| `\n`   | New Line     |
+| `\t`   | Tab          |
+-------------------------
+
+👉 String vs char
+_________________________________________________________
+| char                     | String                     |
+| ------------------------ | -------------------------- |
+| Stores one character     | Stores multiple characters |
+| Uses single quotes `' '` | Uses double quotes `" "`   |
+| Primitive Data Type      | Object (Class)             |
+---------------------------------------------------------
+
+
+
 
