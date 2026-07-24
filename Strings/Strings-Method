@@ -28,4 +28,34 @@ First Character : J
 Empty : false
 Blank : false
 
+| Method               | Return Type | Purpose                          |
+| -------------------- | ----------- | -------------------------------- |
+| `equals()`           | boolean     | Compare content (case-sensitive) | string1.equals(string2);
+| `equalsIgnoreCase()` | boolean     | Compare content (ignore case)    | string1.equalsIgnoreCase(string2);
+| `compareTo()`        | int         | Compare in dictionary order      | string1.compareTo(string2);
+| `contains()`         | boolean     | Check if text exists             | string.contains("text");
+| `startsWith()`       | boolean     | Check starting text              | string.startsWith("prefix");
+| `endsWith()`         | boolean     | Check ending text                | string.endsWith("suffix");
+| `indexOf()`          | int         | First occurrence index           | string.indexOf("text");
+| `lastIndexOf()`      | int         | Last occurrence index            | string.lastIndexOf("text");
+
+public class Main {
+    public static void main(String[] args) {
+        String email = "student@gmail.com";
+        System.out.println(email.contains("@"));
+        System.out.println(email.endsWith(".com"));
+        System.out.println(email.startsWith("student"));
+        System.out.println(email.indexOf("@"));
+        System.out.println(email.lastIndexOf("m"));
+    }
+}
+
+Output:
+true
+true
+true
+7
+16
+
+
 
