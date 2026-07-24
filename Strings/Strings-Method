@@ -1,0 +1,7 @@
+length()
+charAt()
+toUpperCase()
+toLowerCase()
+trim()
+isEmpty()
+isBlank()
