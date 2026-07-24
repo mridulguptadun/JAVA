@@ -438,5 +438,105 @@ ________________________________________________________________________________
    👉 Use setters to update values safely.
    👉 Encapsulation makes code secure, maintainable, and reusable.
 
+=======================
+| Inheritance in Java |
+=======================
+👉 Inheritance is the mechanism by which one class acquires the properties (fields) and behaviors (methods) of another class.
+
+   class Parent {
+   }
+
+   class Child extends Parent {
+   }
+
+   👉 Parent Class = Superclass / Base Class
+   👉 Child Class = Subclass / Derived Class
+
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();
+        d.bark();
+    }
+}
+
+Dog Object
+---------------------
+eat()     ← inherited
+bark()    ← own method
+---------------------
+
+👉 IS-A Relationship -> Inheritance represent IS-A relationship
+
+Dog IS-A Animal
+Car IS-A Vehicle
+Teacher IS-A Person
+Lion IS-A Animal
+
+--------------------------------
+| Types of Inheritance in Java |
+--------------------------------
+
+👉 Single Inheritance 
+
+   class Person {
+       void speak() {
+           System.out.println("Person Speaks");
+       }
+   }
+   class Student extends Person {
+       void study() {
+           System.out.println("Student Studies");
+       }
+   }
+
+👉 Multilevel Inheritance
+
+   class A {
+       void show() {
+           System.out.println("Class A");
+       }
+   }
+   class B extends A {
+   }
+   
+   class C extends B {
+   }
+
+   C obj = new C();
+   obj.show();
+
+👉 Hierarchical Inheritance
+
+   class Animal {
+       void eat() {
+           System.out.println("Eating");
+       }
+   }
+   class Dog extends Animal {
+   }
+   class Cat extends Animal {
+   }
+
+👉 Multiple Inheritance ❌
+👉 Hybrid Inheritance ❌
 
 
+   👉 Inheritance allows one class to acquire the properties and methods of another class.
+   👉 Use the extends keyword to inherit a class.
+   👉 It promotes code reusability and maintainability.
+   👉 Java supports Single, Multilevel, and Hierarchical inheritance with classes.
+   👉 Java does not support Multiple Inheritance with classes because of the Diamond Problem.
+   👉 Inheritance should model an IS-A relationship, not a HAS-A relationship.
