@@ -540,3 +540,144 @@ Lion IS-A Animal
    👉 Java supports Single, Multilevel, and Hierarchical inheritance with classes.
    👉 Java does not support Multiple Inheritance with classes because of the Diamond Problem.
    👉 Inheritance should model an IS-A relationship, not a HAS-A relationship.
+
+=========================
+| super Keyword in Java |
+=========================
+👉 The super keyword is a reference variable that refers to the immediate parent class object. 
+   It is used to access the parent class's variables, methods, and constructors.
+
+Uses of super
+--------------
+   👉 super ke 3 major uses hain:
+   👉 Access Parent Class Variable
+   👉 Call Parent Class Method
+   👉 Call Parent Class Constructor
+
+class Animal {
+    void sound() {
+        System.out.println("Animal Sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog Barks");
+    }
+
+    void display() {
+        sound();
+        super.sound();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.display();
+    }
+}
+
+O/P : Dog Barks
+      Animal Sound
+
+-----------------
+| this vs super |
+-----------------
+____________________________________________________________________
+| `this`                          | `super`                        |
+| ------------------------------- | ------------------------------ |
+| Refers to current object        | Refers to parent class         |
+| Access current class members    | Access parent class members    |
+| Calls current class constructor | Calls parent class constructor |
+| `this()`                        | `super()`                      |
+--------------------------------------------------------------------
+
+Best Practices
+---------------
+   👉 Use super() when the parent constructor performs important initialization.
+   👉 Use super.method() only when you specifically need the parent implementation.
+   👉 Avoid variable name shadowing unless necessary; if it occurs, use super clearly.
+
+Important Rules
+----------------
+   👉 super always refers to the immediate parent class.
+   👉 super() calls the parent constructor.
+   👉 super.method() calls the parent method.
+   👉 super.variable accesses the parent variable.
+   👉 super() must be the first statement in a constructor.
+   👉 super can only be used in subclasses.
+
+
+=============================
+| Method Overriding in Java |
+=============================
+👉 Method Overriding is a feature in which a child class provides its own implementation of a method that is already defined in its parent class.
+
+class Animal {
+    void sound() {
+        System.out.println("Animal Sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog Barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.sound();
+    }
+}
+
+@Override Annotation
+--------------------
+👉 @Override is an annotation that tells the compiler that a method is intended to override a parent class method.
+
+   @Override
+   void sound() {
+   }
+
+   👉 Compile-time checking
+   👉 Typing mistakes detect hoti hain
+   👉 Code readability improve hoti hai
+
+-----------------------------
+| Overriding vs Overloading |
+-----------------------------
+_______________________________________________________
+| Method Overriding    | Method Overloading           |
+| -------------------- | ---------------------------- |
+| Different classes    | Same class (usually)         |
+| Requires inheritance | Does not require inheritance |
+| Same method name     | Same method name             |
+| Same parameters      | Different parameters         |
+| Runtime Polymorphism | Compile-Time Polymorphism    |
+-------------------------------------------------------
+
+Important Points
+-----------------
+   👉 Overriding requires inheritance.
+   👉 Method signature must remain the same.
+   👉 Return type must be compatible.
+   👉 Static, final, and private methods cannot be overridden.
+   👉 Use @Override annotation for better safety.
+   👉 Overriding enables runtime polymorphism.
+
+Summary
+-------
+   👉 Method Overriding allows a child class to provide a new implementation of a parent class method.
+   👉 It requires inheritance.
+   👉 The method name and parameter list must be the same.
+   👉 @Override helps catch mistakes at compile time.
+   👉 Overriding is the foundation of Runtime Polymorphism.
+   👉 static, final, and private methods cannot be overridden.
+
+
+
+
+
