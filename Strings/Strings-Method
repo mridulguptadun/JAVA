@@ -57,5 +57,16 @@ true
 7
 16
 
+| Method           | Return Type | Purpose                  |
+| ---------------- | ----------- | ------------------------ |
+| `substring()`    | String      | Extract part of string   | string.substring(beginIndex);
+| `replace()`      | String      | Replace characters/text  | string.replace(oldValue, newValue);
+| `replaceAll()`   | String      | Replace using regex      | string.replaceAll(regex, replacement);
+| `replaceFirst()` | String      | Replace first occurrence | (text.replaceFirst("Java", "Python"));
+| `concat()`       | String      | Join strings             | string.concat(text);
+| `split()`        | String[]    | Divide into array        | string.split(delimiter);
+| `join()`         | String      | Join with delimiter      | String.join(delimiter, values);
+| `repeat()`       | String      | Repeat string            | s.repeat(3)
+| `matches()`      | boolean     | Check regex pattern      | string.matches(regex);
 
 
