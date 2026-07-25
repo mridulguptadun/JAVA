@@ -31,4 +31,45 @@
     String s3 = "Java";
     System.out.println(s2 == s3);
 
+Mutable vs Immutable
+__________________________________________________
+| Feature            | Mutable       | Immutable |
+| ------------------ | ------------- | --------- |
+| Can Change         | Yes           | No        | 
+| New Object Created | No            | Yes       |
+| Example            | StringBuilder | String    |
+--------------------------------------------------
+
+=================
+| StringBuilder |
+=================
+👉 StringBuilder is a mutable sequence of characters used to create and modify strings efficiently.
+👉 StringBuilder is faster then String b'coz StringBuilder modifies the existing object instead of creating a new object every time.
+👉 String is Immutable
+
+👉 append() -> The append() method adds data at the end of the existing sequence.
+
+    StringBuilder sb = new StringBuilder("Java");
+    sb.append(" Programming");
+    System.out.println(sb);
+
+👉 length() -> The length() method returns the number of characters currently stored in the StringBuilder.
+
+    StringBuilder sb = new StringBuilder("Programming");
+    System.out.println(sb.length());
+
+👉 capacity() -> The capacity() method returns the current storage capacity of the StringBuilder.
+
+    Length = Current characters
+    Capacity = Maximum characters that can be stored before resizing
+
+    StringBuilder sb = new StringBuilder();
+    System.out.println(sb.capacity());
+
+👉 toString() -> The toString() method converts a StringBuilder object into a String object.
+
+    StringBuilder sb = new StringBuilder("Java");
+    String s = sb.toString();
+    System.out.println(s);
+
 
