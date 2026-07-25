@@ -1,1 +1,34 @@
+👉 String Memory in Java -> Java stores String objects in a special memory area called the String Pool to improve memory efficiency.
+                             The String Pool is a special area in the Heap Memory where Java stores unique string literals.
+
+              Heap Memory
++---------------------------------------+
+|                                       |
+|      String Pool (Special Area)       |
+|                                       |
+|      "Java"                           |
+|      "Python"                         |
+|      "Hello"                          |
+|                                       |
++---------------------------------------+
+
+👉 == Operator -> The == operator compares object references (memory addresses), not the contents.
+
+    String s1 = "Java";
+    String s2 = "Java";
+    System.out.println(s1 == s2);   // True
+
+👉 equals() -> The equals() method compares the contents of two strings.
+
+    String s1 = new String("Java");
+    String s2 = new String("Java");
+    System.out.println(s1.equals(s2));
+
+👉 intern() Method -> The intern() method returns a reference from the String Pool.
+
+    String s1 = new String("Java");
+    String s2 = s1.intern();
+    String s3 = "Java";
+    System.out.println(s2 == s3);
+
 
