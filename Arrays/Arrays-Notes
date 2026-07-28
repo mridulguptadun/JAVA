@@ -1,0 +1,13 @@
+===============
+| Java Arrays |
+===============
+👉An array is a data structure that stores multiple values of the same data type in a single variable.
+
+int[] marks = {90, 85, 78, 92, 88};
+
+  👉Stores multiple values.
+  👉Stores same data type only.
+  👉Index starts from 0.
+  👉Fixed size.
+  👉Stored in contiguous memory (conceptually for Java arrays).
+  👉Faster access using index.
