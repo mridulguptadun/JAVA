@@ -1,0 +1,121 @@
+import java.util.Scanner;
+
+public class Main {
+
+    static Scanner sc = new Scanner(System.in);
+
+    // Student Data
+    static String name;
+    static int rollNo;
+    static int[] marks = new int[5];
+    static int total;
+    static double percentage;
+    static String grade;
+
+    // -----------------------------
+    // Input Student Details
+    // -----------------------------
+    static void inputStudent() {
+
+        System.out.print("Enter Student Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Roll Number: ");
+        rollNo = sc.nextInt();
+
+        total = 0;
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Enter Marks of Subject " + (i + 1) + ": ");
+            marks[i] = sc.nextInt();
+            total += marks[i];
+        }
+
+        percentage = total / 5.0;
+
+        sc.nextLine(); // Clear Buffer
+    }
+
+    // -----------------------------
+    // Calculate Grade
+    // -----------------------------
+    static void calculateGrade() {
+
+        if (percentage >= 90)
+            grade = "A+";
+        else if (percentage >= 80)
+            grade = "A";
+        else if (percentage >= 70)
+            grade = "B";
+        else if (percentage >= 60)
+            grade = "C";
+        else if (percentage >= 50)
+            grade = "D";
+        else
+            grade = "Fail";
+
+    }
+
+    // -----------------------------
+    // Display Result
+    // -----------------------------
+    static void displayResult() {
+
+        System.out.println("\n========== RESULT ==========");
+
+        System.out.println("Name       : " + name);
+        System.out.println("Roll No    : " + rollNo);
+
+        System.out.println("Marks");
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Subject " + (i + 1) + " : " + marks[i]);
+        }
+
+        System.out.println("----------------------------");
+        System.out.println("Total      : " + total);
+        System.out.println("Percentage : " + percentage + "%");
+        System.out.println("Grade      : " + grade);
+
+        System.out.println("============================\n");
+    }
+
+    // -----------------------------
+    // Main Menu
+    // -----------------------------
+    static void menu() {
+
+        while (true) {
+
+            System.out.println("===== Student Result System =====");
+            System.out.println("1. Enter Student");
+            System.out.println("2. Show Result");
+            System.out.println("3. Exit");
+
+            System.out.print("Enter Choice: ");
+
+            int choice = sc.nextInt();
+            sc.nextLine();
+            switch (choice) {
+                case 1:
+                    inputStudent();
+                    calculateGrade();
+                    break;
+
+                case 2:
+                    displayResult();
+                    break;
+
+                case 3:
+                    System.out.println("Program Closed.");
+                    return;
+
+                default:
+                    System.out.println("Invalid Choice");
+            }
+        }
+    }
+    public static void main(String[] args) {
+        menu();
+    }
+}
