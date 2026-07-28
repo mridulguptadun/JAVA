@@ -202,3 +202,118 @@ public class Main {
   👉 Always use arr.length instead of hardcoding the size.
   👉 Reverse traversal starts from arr.length - 1.
 
+====================
+| Array Operations |
+====================
+
+public class Main {                                     // Sum of All Elements
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        int sum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+        System.out.println("Sum = " + sum);
+    }
+}
+------------------------------------------------- // Average of Elements
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {10,20,30,40,50};
+        int sum = 0;
+        for(int num : numbers)
+        {
+            sum += num;
+        }
+        double average = (double) sum / numbers.length;
+        System.out.println("Average = " + average);
+    }
+}
+-------------------------------------------------- // Maximum Element
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {25,10,80,45,60};
+        int max = numbers[0];
+        for(int i = 1; i < numbers.length; i++)
+        {
+            if(numbers[i] > max)
+            {
+                max = numbers[i];
+            }
+        }
+        System.out.println("Maximum = " + max);
+    }
+}
+---------------------------------------------------- // Minimum Element
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {25,10,80,45,60};
+        int min = numbers[0];
+        for(int i = 1; i < numbers.length; i++)
+        {
+            if(numbers[i] < min)
+            {
+                min = numbers[i];
+            }
+        }
+        System.out.println("Minimum = " + min);
+    }
+}
+------------------------------------------------------ // Linear Search
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {10,20,30,40,50};
+        int key = 30;
+        boolean found = false;
+        for(int i = 0; i < numbers.length; i++)
+        {
+            if(numbers[i] == key)
+            {
+                System.out.println("Found at Index : " + i);
+                found = true;
+                break;
+            }
+        }
+        if(!found)
+        {
+            System.out.println("Element Not Found");
+        }
+    }
+}
+--------------------------------------------------------- // Count Even Numbers
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {1,2,3,4,5,6,7,8};
+        int count = 0;
+        for(int num : numbers)
+        {
+            if(num % 2 == 0)
+            {
+                count++;
+            }
+        }
+        System.out.println("Even Numbers = " + count);
+    }
+}
+--------------------------------------------------------
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {10,20,30,40,50};
+        int sum = 0;
+        int max = numbers[0];
+        int min = numbers[0];
+        for(int num : numbers)
+        {
+            sum += num;
+            if(num > max)
+                max = num;
+            if(num < min)
+                min = num;
+        }
+        double average = (double) sum / numbers.length;
+        System.out.println("Sum = " + sum);
+        System.out.println("Average = " + average);
+        System.out.println("Maximum = " + max);
+        System.out.println("Minimum = " + min);
+    }
+}
