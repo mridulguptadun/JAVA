@@ -5,9 +5,131 @@
 
 int[] marks = {90, 85, 78, 92, 88};
 
-  👉Stores multiple values.
-  👉Stores same data type only.
-  👉Index starts from 0.
-  👉Fixed size.
-  👉Stored in contiguous memory (conceptually for Java arrays).
-  👉Faster access using index.
+  👉 Stores multiple values.
+  👉 Stores same data type only.
+  👉 Index starts from 0.
+  👉 Fixed size.
+  👉 Stored in contiguous memory (conceptually for Java arrays).
+  👉 Faster access using index.
+
+datatype[] arrayName = new datatype[size];
+
+int[] numbers = new int[5];                   int[] numbers = {10, 20, 30, 40, 50};    // Array Initialization
+int numbers[] = new int[5];
+
+numbers → array name
+int → data type
+5 → size
+-----------------------------------
+int[] numbers = new int[5];   // Assigning Values
+numbers[0] = 10;
+numbers[1] = 20;
+numbers[2] = 30;
+numbers[3] = 40;
+numbers[4] = 50;
+--------------------------------------------
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = new int[5];
+        numbers[0] = 10;
+        numbers[1] = 20;
+        numbers[2] = 30;
+        numbers[3] = 40;
+        numbers[4] = 50;
+        System.out.println(numbers[0]);
+        System.out.println(numbers[1]);
+        System.out.println(numbers[2]);
+        System.out.println(numbers[3]);
+        System.out.println(numbers[4]);
+    }
+}
+
+  👉 Array stores multiple values of the same data type.
+  👉 Index always starts from 0.
+  👉 Array size is fixed after creation.
+  👉 Elements are accessed using their index.
+  👉 Arrays can be created with new or initialized directly using {}.
+
+====================================================
+| Array Memory, Default Values, and length Propert |
+====================================================
+👉 Memory Allocation -> When an array is created using the new keyword, Java allocates memory for all its elements.
+    int[] numbers = new int[5];
+
+numbers
+   |
+   V
++-----+-----+-----+-----+-----+
+|  0  |  0  |  0  |  0  |  0  |
++-----+-----+-----+-----+-----+
+   0     1     2     3     4
+
+👉 Array is an Object -> In Java, an array is an object stored in heap memory.
+    int[] arr = new int[5];
+
+Stack Memory
+arr
+ |
+ |
+ V
+Heap Memory
++-----+-----+-----+-----+-----+
+|  0  |  0  |  0  |  0  |  0  |
++-----+-----+-----+-----+-----+
+
+👉 Default Values -> Java automatically assign default values when we create array using new
+    int[] arr = new int[5];
+    System.out.println(arr[0]);
+
+------------------------
+| Default Values Table |
+------------------------
+______________________________
+| Data Type  | Default Value |
+| ---------- | ------------- |
+| byte       | 0             |
+| short      | 0             |
+| int        | 0             |
+| long       | 0L            |
+| float      | 0.0f          |
+| double     | 0.0           |
+| char       | '\u0000'      |
+| boolean    | false         |
+| String     | null          |
+| Any Object | null          |
+------------------------------
+
+👉 length Property -> The length property returns the number of elements in an array.
+    int[] numbers = {10,20,30,40,50};
+    System.out.println(numbers.length);
+
+public class Main {
+    public static void main(String[] args) {
+        int[] marks = {75,80,65,90,85};
+        System.out.println("Total Elements : " + marks.length);
+    }
+}
+
+====================================================================
+| Traversing Arrays (for Loop, Enhanced for-each Loop, User Input) |
+====================================================================
+👉 Traversing an array means accessing each element of the array one by one.
+    Index :  0   1   2   3   4
+    Value : 10  20  30  40  50
+
+Traversal Order 10 → 20 → 30 → 40 → 50  
+
+public class Main {
+    public static void main(String[] args) {
+        int[] numbers = {10,20,30,40,50};
+        for(int i = 0; i < numbers.length; i++)
+        {
+            System.out.println(numbers[i]);
+            System.out.println("Index = " + i + " Value = " + numbers[i]);
+        }
+    }
+}
+
+
+
