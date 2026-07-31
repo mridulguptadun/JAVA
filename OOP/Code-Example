@@ -1,0 +1,297 @@
+class Animal {    // Single Inheritance
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+
+        d.eat();
+        d.bark();
+    }
+}
+Animal is eating
+Dog is barking
+
+-------------------------------------------------------
+
+class Person {
+    String name = "Rahul";
+    void display() {
+        System.out.println("Name : " + name);
+    }
+}
+
+class Student extends Person {
+    int roll = 101;
+    void showRoll() {
+        System.out.println("Roll : " + roll);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.display();
+        s.showRoll();
+    }
+}
+
+-------------------------------------------------------
+
+class Employee {
+    int salary = 50000;
+}
+
+class Manager extends Employee {
+    int bonus = 10000;
+    void totalSalary() {
+        System.out.println(salary + bonus);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Manager m = new Manager();
+        m.totalSalary();
+    }
+}
+
+--------------------------------------------------------
+
+class Animal {    // Constructor Inheritance
+    Animal() {
+        System.out.println("Animal Constructor");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        System.out.println("Dog Constructor");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+    }
+}
+
+--------------------------------------------------------
+
+class A{     // Multilevel Inheritance
+    void showA(){
+        System.out.println("Class A");
+    }
+}
+
+class B extends A{
+    void showB(){
+        System.out.println("Class B");
+    }
+}
+
+class C extends B{
+    void showC(){
+        System.out.println("Class C");
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        C obj=new C();
+        obj.showA();
+        obj.showB();
+        obj.showC();
+    }
+}
+
+------------------------------------------------------
+
+class Vehicle{
+    void run(){
+        System.out.println("Vehicle Running");
+    }
+}
+
+class Car extends Vehicle{
+    void speed(){
+        System.out.println("Speed 120");
+    }
+}
+
+class BMW extends Car{
+    void model(){
+        System.out.println("BMW X5");
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        BMW b=new BMW();
+        b.run();
+        b.speed();
+        b.model();
+    }
+}
+
+------------------------------------------------------
+
+class College{
+    String college="ABC College";
+}
+
+class Student extends College{
+    String name="Amit";
+}
+
+class Result extends Student{
+    int marks=95;
+
+    void display(){
+        System.out.println(college);
+        System.out.println(name);
+        System.out.println(marks);
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        Result r=new Result();
+        r.display();
+    }
+}
+
+---------------------------------------------------
+
+class Person{
+    void walk(){
+        System.out.println("Walking");
+    }
+}
+
+class Teacher extends Person{
+    void teach(){
+        System.out.println("Teaching");
+    }
+}
+
+class Principal extends Teacher{
+    void manage(){
+        System.out.println("Managing School");
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        Principal p=new Principal();
+        p.walk();
+        p.teach();
+        p.manage();
+    }
+}
+
+----------------------------------------------------------
+
+class Shape{     // Hierarchical Inheritance
+    void draw(){
+        System.out.println("Drawing");
+    }
+}
+
+class Circle extends Shape{
+    void area(){
+        System.out.println("Circle Area");
+    }
+}
+
+class Rectangle extends Shape{
+    void perimeter(){
+        System.out.println("Rectangle Perimeter");
+    }
+}
+
+-----------------------------------------------------------
+
+class Fruit{
+    void vitamins(){
+        System.out.println("Contains Vitamins");
+    }
+}
+
+class Apple extends Fruit{
+    void color(){
+        System.out.println("Red");
+    }
+}
+
+class Mango extends Fruit{
+    void taste(){
+        System.out.println("Sweet");
+    }
+}
+
+------------------------------------------------------------
+
+class Animal{
+    String color="White";
+}
+
+class Dog extends Animal{
+    String color="Black";
+    void printColor(){
+        System.out.println(super.color);
+        System.out.println(color);
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        Dog d=new Dog();
+        d.printColor();
+    }
+}
+
+--------------------------------------------------------------
+
+Banking System
+
+class Bank {
+    double getInterest() {
+        return 0;
+    }
+}
+
+class SBI extends Bank {
+    @Override
+    double getInterest() {
+        return 7.5;
+    }
+}
+
+class HDFC extends Bank {
+    @Override
+    double getInterest() {
+        return 8.2;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Bank b1 = new SBI();
+        Bank b2 = new HDFC();
+        System.out.println("SBI Interest = " + b1.getInterest());
+        System.out.println("HDFC Interest = " + b2.getInterest());
+    }
+}
+
+-------------------------------------------------------------
+
