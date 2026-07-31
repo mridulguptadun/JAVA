@@ -294,4 +294,123 @@ public class Main {
 }
 
 -------------------------------------------------------------
+| this Keyword | -> this is a reference variable that refers to the current object of the class.
+----------------
 
+class Student {
+    String name;
+    int age;
+
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void display() {
+        System.out.println("Name : " + this.name);
+        System.out.println("Age : " + this.age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student("Rahul", 21);
+        s1.display();
+    }
+}
+
+---------------------------------------------------
+
+class Demo {
+    void show() {
+        System.out.println("Show Method");
+    }
+
+    void display() {
+        this.show();   // this Calls Current Class Method
+        System.out.println("Display Method");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.display();
+    }
+}
+
+--------------------------------------------------
+
+class Student { 
+    Student() {
+        this(101);   // this Calls Current Class Constructor
+        System.out.println("Default Constructor");
+    }
+
+    Student(int id) {
+        System.out.println("ID : " + id);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+    }
+}
+
+-----------------------------------------------------
+
+class Demo {
+    void show(Demo obj) {
+        System.out.println("Object Received");
+    }
+
+    void display() {
+        show(this);   // this Pass as Argument
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.display();
+    }
+}
+
+------------------------------------------------------
+Bank Account
+-------------
+class BankAccount {
+    String holderName;
+    int accountNumber;
+    double balance;
+
+    BankAccount(String holderName, int accountNumber, double balance) {
+        this.holderName = holderName;
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    void deposit(double amount) {
+        this.balance += amount;
+    }
+
+    void withdraw(double amount) {
+        this.balance -= amount;
+    }
+
+    void display() {
+        System.out.println("Holder : " + this.holderName);
+        System.out.println("Account No : " + this.accountNumber);
+        System.out.println("Balance : " + this.balance);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount("Amit", 12345, 5000);
+        acc.deposit(2000);
+        acc.withdraw(1000);
+        acc.display();
+    }
+}
