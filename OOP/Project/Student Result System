@@ -1,0 +1,108 @@
+==========================
+| Student Result System |
+=========================
+
+class Student {
+
+    private int rollNo;
+    private String name;
+    protected int marks;
+
+    Student(int rollNo, String name, int marks) {
+
+        this.rollNo = rollNo;
+        this.name = name;
+        this.marks = marks;
+
+    }
+
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void calculateResult() {
+
+        System.out.println("General Result");
+
+    }
+
+    public void display() {
+
+        System.out.println("Roll No : " + rollNo);
+        System.out.println("Name    : " + name);
+        System.out.println("Marks   : " + marks);
+
+    }
+
+}
+------------------------------------------------
+class SchoolStudent extends Student {
+
+    SchoolStudent(int rollNo, String name, int marks) {
+
+        super(rollNo, name, marks);
+
+    }
+
+    @Override
+    public void calculateResult() {
+
+        if (marks >= 33)
+            System.out.println("Status : Pass");
+        else
+            System.out.println("Status : Fail");
+
+    }
+
+}
+--------------------------------------------------
+class CollegeStudent extends Student {
+
+    CollegeStudent(int rollNo, String name, int marks) {
+
+        super(rollNo, name, marks);
+
+    }
+
+    @Override
+    public void calculateResult() {
+
+        if (marks >= 80)
+            System.out.println("Grade : A");
+
+        else if (marks >= 60)
+            System.out.println("Grade : B");
+
+        else if (marks >= 40)
+            System.out.println("Grade : C");
+
+        else
+            System.out.println("Grade : Fail");
+
+    }
+
+}
+-----------------------------------------
+public class Main {
+
+    public static void main(String[] args) {
+
+        SchoolStudent s1 = new SchoolStudent(101, "Rahul", 55);
+
+        CollegeStudent s2 = new CollegeStudent(201, "Amit", 82);
+
+        s1.display();
+        s1.calculateResult();
+
+        System.out.println("--------------------");
+
+        s2.display();
+        s2.calculateResult();
+
+    }
+
+}
