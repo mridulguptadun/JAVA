@@ -1,0 +1,150 @@
+======================
+| Online Exam System |
+======================
+Concepts Used
+✅ Encapsulation
+✅ Constructor
+✅ Inheritance
+✅ Method Overriding
+✅ super()
+
+                User
+                  ↑
+        --------------------
+        |                  |
+     Student            Teacher
+
+class User {
+
+    // Encapsulation
+    private int id;
+    private String name;
+
+    // Constructor
+    User(int id, String name) {
+
+        this.id = id;
+        this.name = name;
+
+    }
+
+    // Getters
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    // Method to Override
+    public void showRole() {
+
+        System.out.println("General User");
+
+    }
+
+    public void display() {
+
+        System.out.println("ID      : " + id);
+        System.out.println("Name    : " + name);
+
+    }
+
+}
+-------------------------------------------
+class Student extends User {
+
+    private int marks;
+
+    Student(int id, String name, int marks) {
+
+        super(id, name);
+        this.marks = marks;
+
+    }
+
+    @Override
+    public void showRole() {
+
+        System.out.println("Role : Student");
+
+    }
+
+    public void showResult() {
+
+        System.out.println("Marks : " + marks);
+
+        if (marks >= 90)
+            System.out.println("Grade : A");
+
+        else if (marks >= 75)
+            System.out.println("Grade : B");
+
+        else if (marks >= 60)
+            System.out.println("Grade : C");
+
+        else
+            System.out.println("Grade : Fail");
+
+    }
+
+}
+------------------------------------
+class Teacher extends User {
+
+    private String subject;
+
+    Teacher(int id, String name, String subject) {
+
+        super(id, name);
+        this.subject = subject;
+
+    }
+
+    @Override
+    public void showRole() {
+
+        System.out.println("Role : Teacher");
+
+    }
+
+    public void teach() {
+
+        System.out.println("Subject : " + subject);
+
+    }
+
+}
+-------------------------------------
+public class Main {
+
+    public static void main(String[] args) {
+
+        Student s1 = new Student(
+                101,
+                "Rahul",
+                87);
+
+        Teacher t1 = new Teacher(
+                201,
+                "Amit Sir",
+                "Java Programming");
+
+        System.out.println("===== Student Details =====");
+
+        s1.display();
+        s1.showRole();
+        s1.showResult();
+
+        System.out.println();
+
+        System.out.println("===== Teacher Details =====");
+
+        t1.display();
+        t1.showRole();
+        t1.teach();
+
+    }
+
+}
