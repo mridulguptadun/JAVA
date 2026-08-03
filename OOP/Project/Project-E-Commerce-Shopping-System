@@ -1,0 +1,195 @@
+==============================
+| E-Commerce Shopping System |
+==============================
+Concepts Used
+✅ Encapsulation
+✅ Constructor
+✅ Inheritance
+✅ Method Overriding
+✅ super()
+
+                    Product
+                       ↑
+        --------------------------------
+        |              |              |
+   Electronics      Clothing       Grocery
+
+class Product {
+
+    // Encapsulation
+    private int productId;
+    private String productName;
+    protected double price;
+
+    // Constructor
+    Product(int productId, String productName, double price) {
+
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+
+    }
+
+    // Getters
+    public int getProductId() {
+        return productId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    // Method to Override
+    public double calculatePrice() {
+
+        return price;
+
+    }
+
+    public void display() {
+
+        System.out.println("Product ID   : " + productId);
+        System.out.println("Product Name : " + productName);
+        System.out.println("Base Price   : ₹" + price);
+
+    }
+
+}
+---------------------------------------------
+class Electronics extends Product {
+
+    private int warrantyYears;
+
+    Electronics(int id, String name, double price, int warrantyYears) {
+
+        super(id, name, price);
+        this.warrantyYears = warrantyYears;
+
+    }
+
+    @Override
+    public double calculatePrice() {
+
+        return price + (price * 0.18); // 18% GST
+
+    }
+
+    @Override
+    public void display() {
+
+        super.display();
+        System.out.println("Warranty     : " + warrantyYears + " Years");
+        System.out.println("Final Price  : ₹" + calculatePrice());
+
+    }
+
+}
+------------------------------------------------
+class Clothing extends Product {
+
+    private String size;
+
+    Clothing(int id, String name, double price, String size) {
+
+        super(id, name, price);
+        this.size = size;
+
+    }
+
+    @Override
+    public double calculatePrice() {
+
+        double discount = price * 0.10;
+
+        return price - discount;
+
+    }
+
+    @Override
+    public void display() {
+
+        super.display();
+        System.out.println("Size         : " + size);
+        System.out.println("Final Price  : ₹" + calculatePrice());
+
+    }
+
+}
+-------------------------------------------------
+class Grocery extends Product {
+
+    private double weight;
+
+    Grocery(int id, String name, double price, double weight) {
+
+        super(id, name, price);
+        this.weight = weight;
+
+    }
+
+    @Override
+    public double calculatePrice() {
+
+        return price;
+
+    }
+
+    @Override
+    public void display() {
+
+        super.display();
+        System.out.println("Weight       : " + weight + " Kg");
+        System.out.println("Final Price  : ₹" + calculatePrice());
+
+    }
+
+}
+----------------------------------------------------
+public class Main {
+
+    public static void main(String[] args) {
+
+        Electronics laptop =
+                new Electronics(
+                        101,
+                        "Dell Laptop",
+                        65000,
+                        2);
+
+        Clothing shirt =
+                new Clothing(
+                        102,
+                        "Polo T-Shirt",
+                        1800,
+                        "L");
+
+        Grocery rice =
+                new Grocery(
+                        103,
+                        "Basmati Rice",
+                        950,
+                        10);
+
+        System.out.println("===== Electronics =====");
+
+        laptop.display();
+
+        System.out.println();
+
+        System.out.println("===== Clothing =====");
+
+        shirt.display();
+
+        System.out.println();
+
+        System.out.println("===== Grocery =====");
+
+        rice.display();
+
+    }
+
+}
