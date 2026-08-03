@@ -1,0 +1,132 @@
+=============================
+| Vehicle Management System |
+=============================
+class Vehicle {
+
+    // Encapsulation
+    private String company;
+    private String model;
+    private double price;
+
+    // Constructor
+    Vehicle(String company, String model, double price) {
+
+        this.company = company;
+        this.model = model;
+        this.price = price;
+
+    }
+
+    // Getters
+    public String getCompany() {
+        return company;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    // Method to Override
+    public void startEngine() {
+
+        System.out.println("Vehicle engine started.");
+
+    }
+
+    public void displayDetails() {
+
+        System.out.println("Company : " + company);
+        System.out.println("Model   : " + model);
+        System.out.println("Price   : ₹" + price);
+
+    }
+
+}
+--------------------------------------------------
+class Car extends Vehicle {
+
+    private int seats;
+
+    Car(String company, String model, double price, int seats) {
+
+        super(company, model, price);
+        this.seats = seats;
+
+    }
+
+    @Override
+    public void startEngine() {
+
+        System.out.println("Car starts with Push Button.");
+
+    }
+
+    @Override
+    public void displayDetails() {
+
+        super.displayDetails();
+        System.out.println("Seats   : " + seats);
+
+    }
+
+}
+--------------------------------------------
+class Bike extends Vehicle {
+
+    private int engineCC;
+
+    Bike(String company, String model, double price, int engineCC) {
+
+        super(company, model, price);
+        this.engineCC = engineCC;
+
+    }
+
+    @Override
+    public void startEngine() {
+
+        System.out.println("Bike starts with Self Start.");
+
+    }
+
+    @Override
+    public void displayDetails() {
+
+        super.displayDetails();
+        System.out.println("Engine  : " + engineCC + " CC");
+
+    }
+
+}
+-------------------------------------------------
+public class Main {
+
+    public static void main(String[] args) {
+
+        Car c1 = new Car(
+                "Hyundai",
+                "Creta",
+                1800000,
+                5);
+
+        Bike b1 = new Bike(
+                "Royal Enfield",
+                "Classic 350",
+                230000,
+                349);
+
+        c1.displayDetails();
+        c1.startEngine();
+
+        System.out.println("--------------------------");
+
+        b1.displayDetails();
+        b1.startEngine();
+
+    }
+
+}
