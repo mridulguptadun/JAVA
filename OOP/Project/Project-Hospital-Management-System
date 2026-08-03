@@ -1,0 +1,211 @@
+==============================
+| Hospital Management System |
+==============================
+Concepts Used
+✅ Encapsulation
+✅ Constructor
+✅ Inheritance
+✅ Method Overriding
+✅ Scanner
+✅ super()
+
+                Person
+                   ↑
+        -----------------------
+        |                    |
+     Doctor              Patient
+
+class Person {
+
+    private int id;
+    private String name;
+
+    Person(int id, String name) {
+
+        this.id = id;
+        this.name = name;
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void display() {
+
+        System.out.println("\nID : " + id);
+        System.out.println("Name : " + name);
+
+    }
+
+    public void showDetails() {
+
+        System.out.println("Person Details");
+
+    }
+
+}
+-----------------------------
+class Doctor extends Person {
+
+    private String specialization;
+    private double salary;
+
+    Doctor(int id, String name, String specialization, double salary) {
+
+        super(id, name);
+
+        this.specialization = specialization;
+        this.salary = salary;
+
+    }
+
+    @Override
+    public void showDetails() {
+
+        System.out.println("Role : Doctor");
+
+    }
+
+    @Override
+    public void display() {
+
+        super.display();
+
+        System.out.println("Specialization : " + specialization);
+        System.out.println("Salary : " + salary);
+
+    }
+
+}
+----------------------------------------------
+class Patient extends Person {
+
+    private String disease;
+    private double bill;
+
+    Patient(int id, String name, String disease, double bill) {
+
+        super(id, name);
+
+        this.disease = disease;
+        this.bill = bill;
+
+    }
+
+    @Override
+    public void showDetails() {
+
+        System.out.println("Role : Patient");
+
+    }
+
+    @Override
+    public void display() {
+
+        super.display();
+
+        System.out.println("Disease : " + disease);
+        System.out.println("Hospital Bill : " + bill);
+
+    }
+
+}
+------------------------------------------------
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("===== Doctor Information =====");
+
+        System.out.print("Enter Doctor ID : ");
+        int did = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Doctor Name : ");
+        String dname = sc.nextLine();
+
+        System.out.print("Enter Specialization : ");
+        String specialization = sc.nextLine();
+
+        System.out.print("Enter Salary : ");
+        double salary = sc.nextDouble();
+
+        Doctor d1 = new Doctor(did, dname, specialization, salary);
+
+        System.out.println();
+
+        sc.nextLine();
+
+        System.out.println("===== Patient Information =====");
+
+        System.out.print("Enter Patient ID : ");
+        int pid = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Patient Name : ");
+        String pname = sc.nextLine();
+
+        System.out.print("Enter Disease : ");
+        String disease = sc.nextLine();
+
+        System.out.print("Enter Hospital Bill : ");
+        double bill = sc.nextDouble();
+
+        Patient p1 = new Patient(pid, pname, disease, bill);
+
+        System.out.println("\n========= OUTPUT =========");
+
+        d1.showDetails();
+        d1.display();
+
+        System.out.println("--------------------------");
+
+        p1.showDetails();
+        p1.display();
+
+        sc.close();
+
+    }
+
+}
+------------------------------------------------------
+===== Doctor Information =====
+
+Enter Doctor ID : 101
+Enter Doctor Name : Rahul
+Enter Specialization : Cardiologist
+Enter Salary : 120000
+
+===== Patient Information =====
+
+Enter Patient ID : 201
+Enter Patient Name : Amit
+Enter Disease : Fever
+Enter Hospital Bill : 3500
+
+========= OUTPUT =========
+
+Role : Doctor
+
+ID : 101
+Name : Rahul
+Specialization : Cardiologist
+Salary : 120000.0
+
+--------------------------
+
+Role : Patient
+
+ID : 201
+Name : Amit
+Disease : Fever
+Hospital Bill : 3500.0
